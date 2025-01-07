@@ -1,0 +1,71 @@
+
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+
+
+{% block content %}
+
+<div class="content-wrapper" style="background-image: url('{% static "un.jpg" %}');">
+  <div class="content">
+      <!-- Animated Hello Text -->
+      <h1 class="animated-text"></h1>
+
+      <!-- Quote Section -->
+      <div class="quote">
+          "Each meeting occurs at the precise moment for which it was meant. Usually, when it will have the greatest impact on our lives."
+          <div class="author">― Nadia Scrieva, Fathoms of Forgiveness</div>
+      </div>
+
+      <!-- Profile Container -->
+      <div class="profile-container">
+          <div class="profile-section">
+              <!-- Left Section - Profile Image -->
+              <div class="profile-left">
+                  <img src="{% static 'm4.jpg' %}" alt="Profile" class="profile-image">
+              </div>
+              
+              <!-- Center Section - Name and Intro -->
+              <div class="profile-center">
+                  <h2 class="profile-name">वैभव</h2>
+                  <p class="land_intro">
+                     <em> Driven by intellectual curiosity, I explore various topics, subjects and share my reflections and learnings. 
+                      Join me on this journey of exploration...</em>
+                  </p>
+              </div>
+
+              <!-- Right Section - Social Icons -->
+              <div class="profile-right">
+                  <div class="social-icons-vertical">
+                      <a href="https://twitter.com" target="_blank">
+                          <img src="{% static 'tw.png' %}" alt="Twitter" class="social-icon">
+                      </a>
+                      <a href="https://facebook.com" target="_blank">
+                          <img src="{% static 'fb1.png' %}" alt="Facebook" class="social-icon">
+                      </a>
+                      <a href="https://instagram.com" target="_blank">
+                          <img src="{% static 'in.png' %}" alt="Instagram" class="social-icon">
+                      </a>
+                      <a href="https://linkedin.com" target="_blank">
+                          <img src="{% static 'lk.png' %}" alt="LinkedIn" class="social-icon">
+                      </a>
+                      <a href="mailto:your@email.com">
+                          <img src="{% static 'gm.png' %}" alt="Email" class="social-icon">
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+              <a href="{% url 'blog:posts' %}" class="btn btn-explore">Read my posts</a>
+              <a href="{% url 'blog:image_gallery' %}" class="btn btn-discover">View my gallery</a>
+              <a href="{% url 'blog:thoughts_page' %}" class="btn btn-contact">Mere Vichar</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

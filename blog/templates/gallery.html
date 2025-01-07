@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+
+<div class="gallery" style="background-image: url('{% static "cr.jpg" %}');">
+    {% for image in images %}
+        <div class="gallery-item">
+            <a target="_blank" href="{{ image.image.url }}">
+            <img src="{{ image.image.url }}" alt="{{ image.caption }}"></a>
+            <p>{{ image.caption }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

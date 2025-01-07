@@ -1,0 +1,36 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+
+
+ <div class="pst">
+
+   
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="pst-img" %>
+    {% endif %}
+   
+   <div class='pst-title'>
+    <h1>{{post.title}}</h1>
+   </div>
+   <div class='pst-meta'> 
+    <p>
+      {{ post.author }} &nbsp;  <a class="post-category" href="{% url 'blog:category_posts' category_slug=post.category.slug %}">{{ post.category }}</a> &nbsp;  {{ post.created_date }}
+    </p>
+   </div>
+    <div class="pst-content">
+      
+    <p>
+      {{ post.body | safe }}
+    </p>
+      </div>
+    </div>
+    
+   
+  
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- templates/header.html -->
+{% load static %}
+<div class="header">
+    <div class="navbar">
+        <div class="title">Vaibhavam</div>
+        <div class="navbar-links">
+            <a href="{% url 'blog:home' %}">Home</a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                ☰ <!-- Menu Icon -->
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="{% url 'blog:posts' %}">Posts</a>
+        <a href="{% url 'blog:image_gallery' %}">Gallery</a>
+        <a href="{% url 'blog:thoughts_page' %}">Thoughts</a>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('dropdownMenu');
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block'; // Show the menu
+        } else {
+            menu.style.display = 'none'; // Hide the menu
+        }
+    }
+</script>

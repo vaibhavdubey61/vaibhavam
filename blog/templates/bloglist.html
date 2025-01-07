@@ -1,0 +1,40 @@
+
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+
+<div class="quote-section">
+    <blockquote>
+      "पूर्वाग्रह ही स्वर्ग को स्वर्ग और नर्क को नर्क समान बनाता है ।"
+    </blockquote>
+    <p class="quote-author">- वैभव</p>
+  </div>
+
+<div class="card-container">
+    {% for post in posts %}
+    <div class="card">
+        {% if post.image %}
+        <div class="pic-container">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="pic">
+        </div>
+        {% endif %}
+        <div class="pl_content">
+            <h2><a class='pl_title' href="{% url 'blog:post_detail' slug=post.slug %}">{{post.title}}</a></h2>
+            <p class="snippet">{{post.snippet}}</p>
+            <div class="pl_meta">
+                <span>{{ post.author }} | {{ post.created_date }}</span>
+                <a href="{% url 'blog:category_posts' category_slug=post.category.slug %}" class="pl_category">
+                    {{ post.category }}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+   
+
+{% endblock %}

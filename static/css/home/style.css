@@ -1,0 +1,337 @@
+/* Define Theme Variables */
+:root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --navbar-bg: rgba(0, 0, 0, 0.5);
+    --navbar-text: #ffffff;
+    --navbar-hover: #e08344;
+    --category-bg: #1e1e1e;
+    --card-bg: #1c1c1c;
+    --card-border-hover: rgb(241, 100, 44);
+    --quote-bg: linear-gradient(120deg, #ae9850, #ba4524);
+    --quote-text: #ffffff;
+    --snippet-color: #cccccc;
+    --meta-color: #aaaaaa;
+    --accent-color: #e08344;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #ffffff;
+        --text-color: #121212;
+        --navbar-bg: rgba(255, 255, 255, 0.9);
+        --navbar-text: #121212;
+        --navbar-hover: #d55a00;
+        --category-bg: #f4f4f4;
+        --card-bg: #f9f9f9;
+        --card-border-hover: #d55a00;
+        --quote-bg: linear-gradient(120deg, #ffcc80, #ffab40);
+        --quote-text: #121212;
+        --snippet-color: #555555;
+        --meta-color: #777777;
+        --accent-color: #d55a00;
+    }
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    position: relative;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 20px;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--navbar-text);
+    font-weight: bold;
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    color: var(--navbar-hover);
+}
+
+/* Title */
+.title {
+    font-family: 'Jaini Purva', Georgia, serif;
+    font-size: 36px;
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Hero Image */
+.hero-image {
+    background-size: cover;
+    background-position: top;
+    height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+/* Category Navbar */
+.category-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--category-bg);
+    padding: 10px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.category-navbar a {
+    text-decoration: none;
+    color: var(--navbar-text);
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.category-navbar a:hover {
+    color: var(--navbar-hover);
+}
+
+/* Quotes Section */
+.quote-section {
+    font-family: Yatra One;
+    width: 100%;
+    background: var(--quote-bg);
+    color: var(--quote-text);
+    text-align: center;
+    padding: 1.1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+blockquote {
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0.5em 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.quote-author {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Container */
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card Layout */
+.card {
+    display: flex;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card:hover {
+    border: 1px solid var(--card-border-hover);
+}
+
+/* Image Styling */
+.pic-container {
+    width: 280px;
+    min-width: 280px;
+    height: 180px;
+}
+
+.pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.0rem;
+}
+
+h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.snippet {
+    margin: 0 0 15px 0;
+    color: var(--snippet-color);
+    line-height: 1.5;
+}
+
+/* Meta Information */
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--meta-color);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.category {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.category:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .pic-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Post Detail */
+
+.post-image {
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: 350px;
+    padding-top: 10px;
+    object-fit: cover;
+}
+
+.post-title {
+    font-family: Cinzel, serif;
+    font-size: 29px;
+    padding-top: 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.post-meta {
+    text-align: center;
+}
+
+.post-category {
+    text-decoration: none;
+    
+    color: #c8c8c8;
+}
+
+.post-category:hover {
+    color: #d55a00;
+}
+
+.post-content {
+    display: flex;
+    justify-content: center;
+    
+    /* Full viewport height */
+    margin: 10px;
+    padding: 0;
+    background-color: #f0f0f0; /* Subtle background color */
+}
+
+.post-content>.content {
+    
+    max-width: 800px; /* Maximum width for the content box */
+    width: 100%; /* Ensure it's responsive */
+    padding: 5px;
+    background-color: #fff; /* White background for the content box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    text-align: justify; /* Justify text for better readability */
+}
+.p-content{
+    font-family: 'Fauna One', serif;
+}
+
+
+/* Category posts */
+
+.cat-name, .cat-description {
+    text-align: center;
+   
+}
+
+.cat-posts{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: #4d4c4c;
+    padding: 20px;
+}
+
+.cat-posts>.cat-list {
+    background-color: #121212;
+    margin: 10px;
+    padding: 10px 10px;
+
+}
+
+.cat-post-title{
+    text-decoration: none;
+    
+    color: #c8c8c8;
+}
+
+.cat-list h2:hover {           /*doubt */
+    color: #e76609;
+    
+}

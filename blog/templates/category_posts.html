@@ -1,0 +1,28 @@
+<!-- templates/blog/category_posts.html -->
+{% extends 'home.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<h1 class="cat-name">{{ category.name }}</h1>
+<p class="cat-description">{{ category.description }}</p>
+
+<div class="cat-posts">
+    {% for post in posts %}
+
+  <div class='cat-list'>
+    <article >
+       
+        <h2 class="cat-post-title"><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a></h2>
+        <p class="meta">
+            By {{ post.author.get_full_name|default:post.author.username }} | 
+            {{ post.created_date }}
+        </p>
+        <p>{{ post.snippet }}</p>
+    </article>
+  </div> 
+    {% empty %}
+    <p>No posts found in this category.</p>
+    {% endfor %}
+</div>
+{% endblock %}

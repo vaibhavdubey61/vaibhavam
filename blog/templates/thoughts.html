@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}Thoughts{% endblock %}
+
+{% block content %}
+
+<p class="thought-heading">मेरे विचार</p>
+
+<div class="thoughts">
+    {% for thought in thoughts %}
+        <div class="thought-item">
+            <p>{{ thought.thought | safe}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
